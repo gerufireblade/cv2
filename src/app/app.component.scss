@@ -1,0 +1,51 @@
+:host {
+
+  mat-toolbar {
+    background: white;
+    padding: 3rem 4rem;
+    mat-toolbar-row {
+      button:first-of-type{
+        margin-right: 16px;
+      }
+      .linkedin-button {
+        font-size: 16px;
+        background-color: transparent;
+        border-color: #6205d7;
+        color: #6205d7;
+        border-width: 2px;
+      }
+
+      .linkedin-button:hover {
+        background-color: #6205d7;
+        color: white;
+      }
+
+      .git-button {
+        font-size: 16px;
+        background-color: transparent;
+        color: #292929;
+      }
+
+      .git-button:hover {
+        background-color: transparent;
+        color: #6205d7;
+      }
+    }
+  }
+  .content {
+    padding: 3rem 0rem;
+    .profile {
+      padding: 4rem;
+      display: flex;
+      justify-content: center;
+      p {
+        font-size: 36px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+}

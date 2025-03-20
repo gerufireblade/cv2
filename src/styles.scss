@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* Estilos globales */
+html, body { 
+  height: 100%; 
+}
+
+* { 
+  margin: 0; 
+  font-family: 'Lato', sans-serif !important; 
+}
+
+/* Clases para diferentes pesos de fuente */
+.text-thin { font-weight: 100; }  /* Extra delgado */
+.text-light { font-weight: 300; } /* Ligero */
+.text-regular { font-weight: 400; } /* Normal */
+.text-bold { font-weight: 700; }  /* Negrita */
+.text-black { font-weight: 900; }  /* Extra negrita */
+
+:root {
+  --mat-primary: #4CAF50;  /* Verde */
+  --mat-accent: #FFC107;   /* Amarillo */
+  --mat-warn: #F44336;     /* Rojo */
+}
+
+/* Aplica los colores a los botones */
+.mat-primary {
+  background-color: var(--mat-primary) !important;
+  color: white !important;
+}
+
+.mat-accent {
+  background-color: var(--mat-accent) !important;
+  color: black !important;
+}
+
+.mat-warn {
+  background-color: var(--mat-warn) !important;
+  color: white !important;
+}
+
