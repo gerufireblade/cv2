@@ -1,59 +1,39 @@
 
-<mat-toolbar>
-  <mat-toolbar-row>
-    <span>Gianfranco</span>
-    <span class="example-spacer"></span>
-    <div class="example-button-row">
-      <button mat-button class="git-button">GitHub</button>
-      <button mat-stroked-button class="linkedin-button">LinkedIn</button>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-<!--
-<div style="height: 100vh;"> 
-  <mat-toolbar color="primary">
-    <div fxShow="true" fxHide.gt-sm="true">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-
-    <a mat-button class="companyName" routerLink="/">
-      <span>Site name</span>
-    </a>
-    <span class="example-spacer"></span>
-    <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="/about-us">About us</a>
-      <a mat-button routerLink="/prices">Prices</a>
-      <a mat-button routerLink="/start-page">Start page</a>
-      <a mat-button routerLink="/offer">Offer</a>
-      <a mat-button routerLink="/contact">Contact</a>
-    </div>
-
-  </mat-toolbar>
-  <mat-sidenav-container fxFlexFill class="example-container">
-
-    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
-      <div fxLayout="column">
-        <a mat-button routerLink="/about-us">About us</a>
-        <a mat-button routerLink="/prices">Prices</a>
-        <a mat-button routerLink="/start-page">Start page</a>
-        <a mat-button routerLink="/offer">Offer</a>
-        <a mat-button routerLink="/contact">Contact</a>
-      </div>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>
-      Awesome content
-    </mat-sidenav-content>
-
-  </mat-sidenav-container>
-</div>  -->
-
 <div class="content">
+  <mat-toolbar [class.expanded]="isExpanded">
+    <mat-toolbar-row>
+     
+      <div class="left-content">
+        <img *ngIf="isReady" class="logo" src="https://i.imgur.com/lDxAfVB.png" alt="logo">
+        <span class="name">gian</span>
+      </div>
+      <div class="right-content">
+        <div *ngIf="isReady && !isMobile" class="desktop-buttons hidden-until-ready">
+          <button mat-button class="git-button">GitHub</button>
+          <button mat-stroked-button class="linkedin-button">LinkedIn</button>
+        </div>
+        <mat-icon 
+          class="material-icons" mat-icon-button
+          *ngIf="isReady && isMobile"
+          (click)="toggleMenu()"
+        >{{ isExpanded ? 'close' : 'menu' }}</mat-icon>
+      </div>
+    
+    </mat-toolbar-row>
+  
+    <!-- Menú desplegable en pantallas pequeñas (solo visible en móvil) -->
+    <mat-toolbar-row *ngIf="isReady && isMobile" class="mobile-menu" [class.expanded]="isExpanded">
+      <button mat-button class="git-button" (click)="redirectTo('https://github.com/gerufireblade')">GitHub</button>
+      <button mat-button class="linkedin-button" (click)="redirectTo('https://www.linkedin.com/in/gianestevez/')">LinkedIn</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
   <section>
     <div class="profile">
-      <p>Frontend, Backend & Database Developer uwu</p>
+      <p class="main-color-text main-text">Frontend, Backend & Database Developer</p>
+      <p class="slogan">Building smooth, fast, and seamless digital experiences.</p>
+
+      <img class="profile-photo" src="https://i.imgur.com/WXtlQK1.jpg" alt="Profile Photo">
     </div>
   </section>
 </div>

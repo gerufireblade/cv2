@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 /* Estilos globales */
 html, body { 
   height: 100%; 
@@ -9,6 +9,18 @@ html, body {
   margin: 0; 
   font-family: 'Lato', sans-serif !important; 
 }
+
+.material-icons{
+    font-family: 'Material Icons' !important;
+}
+
+.main-color-text {
+  color: #292929;
+}
+
+/**
+* App palette colors #E5E5E5 #14213D #292929 #6E13D9 #000000
+/
 
 /* Clases para diferentes pesos de fuente */
 .text-thin { font-weight: 100; }  /* Extra delgado */

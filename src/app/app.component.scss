@@ -1,51 +1,180 @@
 :host {
-
-  mat-toolbar {
-    background: white;
-    padding: 3rem 4rem;
-    mat-toolbar-row {
-      button:first-of-type{
-        margin-right: 16px;
-      }
-      .linkedin-button {
-        font-size: 16px;
-        background-color: transparent;
-        border-color: #6205d7;
-        color: #6205d7;
-        border-width: 2px;
-      }
-
-      .linkedin-button:hover {
-        background-color: #6205d7;
-        color: white;
-      }
-
-      .git-button {
-        font-size: 16px;
-        background-color: transparent;
-        color: #292929;
-      }
-
-      .git-button:hover {
-        background-color: transparent;
-        color: #6205d7;
-      }
-    }
-  }
   .content {
-    padding: 3rem 0rem;
-    .profile {
-      padding: 4rem;
+
+    mat-toolbar {
+      padding: 64px 0px;
+      background: white;
+      transition: all 0.3s ease-in-out;
+      flex-direction: unset;
       display: flex;
       justify-content: center;
-      p {
+
+      mat-toolbar-row {
+        margin: 0px 96px;
+        max-width: 1350px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        justify-content: space-between;
+
+
+        .left-content {
+          display: flex;
+          align-items: center;
+        } 
+        
+        mat-icon {
+          color: #292929;
+        }
+
+        button:first-of-type {
+          margin-right: 16px;
+          padding: 0px;
+        }
+
+        .logo {
+          height: 56px;
+          margin-bottom: 8px;
+          padding-right: 4px;
+        }
+
+        .name {
+          color: #292929;
+          padding-left: 8px;
+          font-weight: 900;
+        }
+
+        .linkedin-button {
+          font-size: 16px;
+          background-color: transparent;
+          border-color: #6205d7;
+          color: #6205d7;
+          border-width: 2px;
+        }
+
+        .linkedin-button:hover {
+          background-color: #6205d7;
+          color: white;
+        }
+
+        .git-button {
+          font-size: 16px;
+          background-color: transparent;
+          color: #292929;
+        }
+
+        .git-button:hover {
+          background-color: transparent;
+          color: #6205d7;
+        }
+
+        .desktop-buttons {
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+
+    .profile {
+      margin: 48px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & p.main-text {
         font-size: 36px;
         font-weight: 600;
       }
+
+      & p.slogan {
+        color: #656565;
+        font-size: 20px;
+        margin-top: 24px;
+      }
+
+      & img {
+        border-radius: 50%;
+        object-fit: cover;
+        height: 300px;
+        width: 300px;
+        margin-top: 78px;
+      }
     }
   }
+  
+   @media (max-width: 959px) {
+    .content {
+      mat-toolbar{
+        display: flex;
+        flex-direction: column;
+        padding: 32px 32px 16px 32px;
 
-  .example-spacer {
-    flex: 1 1 auto;
+        .mobile-menu {
+          display: flex;
+          flex-direction: column;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          visibility: hidden;
+          transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+        }
+
+        .mobile-menu.expanded {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 16px 0px;
+          max-height: 300px;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        mat-toolbar-row {
+          margin: 0;
+
+          button:first-of-type{
+            margin-right: 0px;
+          }
+
+          .linkedin-button {
+            font-size: 16px;
+            background-color: transparent;
+            color: #292929;
+          }
+
+          .linkedin-button:hover {
+            color: white;
+          }
+
+          .left-content {
+            .logo {
+              height: 46px;
+              margin-bottom: 6px;
+              padding-right: 0px;
+            }
+          }
+        }
+      }
+      .profile {
+        margin: 48px 32px;
+
+        & p {
+          text-align: center;
+        }
+
+        p.slogan {
+          margin-top: 32px;
+        }
+
+        & img {
+          height: 250px;
+          width: 250px;
+          margin-top: 60px;
+        }
+      }
+    }    
   }
 }
