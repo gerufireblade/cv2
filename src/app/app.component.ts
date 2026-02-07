@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   title = 'cv';
   isExpanded = false;
   isMobile = false;
-  isReady = false;
+  isReady = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
     if (isPlatformBrowser(this.platformId)) {
