@@ -50,16 +50,10 @@
           color: var(--text-dark);
         }
 
-        // ----- Buttons base -----
-
-        button:first-of-type {
-          margin-right: 16px;
-          padding: 0;
-        }
 
         .desktop-buttons {
           display: flex;
-          gap: 10px;
+          gap: 24px;
         }
 
         // ----- Git button (UNCHANGED behavior) -----

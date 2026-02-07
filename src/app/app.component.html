@@ -1,5 +1,5 @@
 <div class="content">
-  <mat-toolbar [class.expanded]="isExpanded()">
+  <mat-toolbar>
     <mat-toolbar-row>
 
       <div class="left-content">
@@ -9,37 +9,29 @@
 
       <div class="right-content">
 
-        @if (!isMobile()) {
           <div class="desktop-buttons">
-            <button mat-button class="git-button" (click)="openGithub()">GitHub</button>
-            <button mat-stroked-button class="linkedin-button" (click)="openLinkedIn()">LinkedIn</button>
+            <a
+  mat-button
+  class="git-button"
+  href="https://github.com/gerufireblade"
+  target="_blank"
+  rel="noopener noreferrer">
+  GitHub
+</a>
+
+<a
+  mat-stroked-button
+  class="linkedin-button"
+  href="https://www.linkedin.com/in/gianestevez/"
+  target="_blank"
+  rel="noopener noreferrer">
+  LinkedIn
+</a>
           </div>
-        }
-
-        @if (isMobile()) {
-          <button
-            mat-icon-button
-            aria-label="Toggle menu"
-            (click)="toggleMenu()">
-
-            <mat-icon>
-              {{ isExpanded() ? 'close' : 'menu' }}
-            </mat-icon>
-
-          </button>
-        }
 
       </div>
 
     </mat-toolbar-row>
-
-    @if (isMobile() && isExpanded()) {
-      <mat-toolbar-row class="mobile-menu">
-        <button mat-button (click)="openGithub()">GitHub</button>
-        <button mat-button (click)="openLinkedIn()">LinkedIn</button>
-      </mat-toolbar-row>
-    }
-
   </mat-toolbar>
 
   <section class="profile">
