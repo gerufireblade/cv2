@@ -1,40 +1,60 @@
-
 <div class="content">
-  <mat-toolbar [class.expanded]="isExpanded">
+  <mat-toolbar [class.expanded]="isExpanded()">
     <mat-toolbar-row>
-     
+
       <div class="left-content">
-        <img class="logo" src="https://i.imgur.com/lDxAfVB.png" alt="logo">
-        <span class="name">gian</span>
+        <img class="logo" src="https://i.imgur.com/lDxAfVB.png" alt="Gian logo">
+        <span class="name">Gian</span>
       </div>
+
       <div class="right-content">
-        <div *ngIf="isReady && !isMobile" class="desktop-buttons hidden-until-ready">
-          <button mat-button class="git-button">GitHub</button>
-          <button mat-stroked-button class="linkedin-button">LinkedIn</button>
-        </div>
-        <mat-icon 
-          class="material-icons" mat-icon-button
-          *ngIf="isReady && isMobile"
-          (click)="toggleMenu()"
-        >{{ isExpanded ? 'close' : 'menu' }}</mat-icon>
+
+        @if (!isMobile()) {
+          <div class="desktop-buttons">
+            <button mat-button class="git-button" (click)="openGithub()">GitHub</button>
+            <button mat-stroked-button class="linkedin-button" (click)="openLinkedIn()">LinkedIn</button>
+          </div>
+        }
+
+        @if (isMobile()) {
+          <button
+            mat-icon-button
+            aria-label="Toggle menu"
+            (click)="toggleMenu()">
+
+            <mat-icon>
+              {{ isExpanded() ? 'close' : 'menu' }}
+            </mat-icon>
+
+          </button>
+        }
+
       </div>
-    
+
     </mat-toolbar-row>
-  
-    <!-- Menú desplegable en pantallas pequeñas (solo visible en móvil) -->
-    <mat-toolbar-row *ngIf="isReady && isMobile" class="mobile-menu" [class.expanded]="isExpanded">
-      <button mat-button class="git-button" (click)="redirectTo('https://github.com/gerufireblade')">GitHub</button>
-      <button mat-button class="linkedin-button" (click)="redirectTo('https://www.linkedin.com/in/gianestevez/')">LinkedIn</button>
-    </mat-toolbar-row>
+
+    @if (isMobile() && isExpanded()) {
+      <mat-toolbar-row class="mobile-menu">
+        <button mat-button (click)="openGithub()">GitHub</button>
+        <button mat-button (click)="openLinkedIn()">LinkedIn</button>
+      </mat-toolbar-row>
+    }
+
   </mat-toolbar>
 
-  <section>
-    <div class="profile">
-      <p class="main-color-text main-text">Front, Backend & Database Developer</p>
-      <p class="slogan">Building smooth, fast, and seamless digital experiences.</p>
+  <section class="profile">
+    <p class="main-color-text main-text">
+      Frontend, Backend & Database Developer
+    </p>
 
-      <img class="profile-photo" src="https://i.imgur.com/WXtlQK1.jpg" alt="Profile Photo">
-    </div>
+    <p class="slogan">
+      Building smooth, fast, and seamless digital experiences.
+    </p>
+
+    <img
+      class="profile-photo"
+      src="https://i.imgur.com/WXtlQK1.jpg"
+      alt="Profile photo">
   </section>
 </div>
 

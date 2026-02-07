@@ -1,37 +1,35 @@
 :host {
+  // ---------- Variables ----------
+
+  --primary: #6205d7;
+  --text-dark: #080808;
+  --text-muted: #656565;
+
   .content {
 
+    // ==============================
+    // Toolbar
+    // ==============================
+
     mat-toolbar {
-      padding: 64px 0px;
-      background: white;
-      transition: all 0.3s ease-in-out;
-      flex-direction: unset;
       display: flex;
       justify-content: center;
+      padding: 64px 0;
+      background: #fff;
+      transition: all 0.3s ease-in-out;
 
       mat-toolbar-row {
-        margin: 0px 96px;
-        max-width: 1350px;
         display: flex;
         align-items: center;
-        height: 100%;
-        width: 100%;
-        padding: 0;
         justify-content: space-between;
+        width: 100%;
+        padding: 0 160px;
 
+        // ----- Left content -----
 
         .left-content {
           display: flex;
           align-items: center;
-        } 
-        
-        mat-icon {
-          color: #292929;
-        }
-
-        button:first-of-type {
-          margin-right: 16px;
-          padding: 0px;
         }
 
         .logo {
@@ -41,76 +39,101 @@
         }
 
         .name {
-          color: #292929;
           padding-left: 8px;
           font-weight: 900;
+          color: var(--text-dark);
         }
 
-        .linkedin-button {
-          font-size: 16px;
-          background-color: transparent;
-          border-color: #6205d7;
-          color: #6205d7;
-          border-width: 2px;
+        // ----- Icons -----
+
+        mat-icon {
+          color: var(--text-dark);
         }
 
-        .linkedin-button:hover {
-          background-color: #6205d7;
-          color: white;
-        }
+        // ----- Buttons base -----
 
-        .git-button {
-          font-size: 16px;
-          background-color: transparent;
-          color: #292929;
-        }
-
-        .git-button:hover {
-          background-color: transparent;
-          color: #6205d7;
+        button:first-of-type {
+          margin-right: 16px;
+          padding: 0;
         }
 
         .desktop-buttons {
           display: flex;
           gap: 10px;
         }
+
+        // ----- Git button (UNCHANGED behavior) -----
+
+        .git-button {
+          font-size: 16px;
+          background: transparent;
+          color: black;
+
+          &:hover {
+            background: transparent;
+            color: var(--primary);
+          }
+        }
+
+        // ----- LinkedIn button (UNCHANGED behavior) -----
+
+        .linkedin-button {
+          font-size: 16px;
+          background: transparent;
+          border: 2px solid var(--primary);
+          color: var(--primary);
+
+          &:hover {
+            background: var(--primary);
+            color: #fff;
+          }
+        }
       }
     }
 
+    // ==============================
+    // Profile section
+    // ==============================
+
     .profile {
-      margin: 48px 0px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin: 48px 0;
 
-      & p.main-text {
+      .main-text {
         font-size: 36px;
         font-weight: 600;
       }
 
-      & p.slogan {
-        color: #656565;
-        font-size: 20px;
+      .slogan {
         margin-top: 24px;
+        font-size: 20px;
+        color: var(--text-muted);
       }
 
-      & img {
+      img {
+        width: 300px;
+        height: 300px;
+        margin-top: 78px;
         border-radius: 50%;
         object-fit: cover;
-        height: 300px;
-        width: 300px;
-        margin-top: 78px;
       }
     }
   }
-  
-   @media (max-width: 959px) {
+
+  // ==============================
+  // Mobile styles
+  // ==============================
+
+  @media (max-width: 959px) {
+
     .content {
-      mat-toolbar{
-        display: flex;
+
+      mat-toolbar {
         flex-direction: column;
-        padding: 32px 32px 16px 32px;
+        padding: 32px 32px 16px;
 
         .mobile-menu {
           display: flex;
@@ -119,62 +142,62 @@
           opacity: 0;
           overflow: hidden;
           visibility: hidden;
-          transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
-        }
 
-        .mobile-menu.expanded {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          padding: 16px 0px;
-          max-height: 300px;
-          opacity: 1;
-          visibility: visible;
+          transition:
+            max-height 0.3s ease-out,
+            opacity 0.3s ease-out,
+            visibility 0.3s ease-out;
+
+          &.expanded {
+            gap: 10px;
+            padding: 16px 0;
+            max-height: 300px;
+            opacity: 1;
+            visibility: visible;
+          }
         }
 
         mat-toolbar-row {
           margin: 0;
 
-          button:first-of-type{
-            margin-right: 0px;
+          button:first-of-type {
+            margin-right: 0;
           }
 
           .linkedin-button {
-            font-size: 16px;
-            background-color: transparent;
-            color: #292929;
-          }
+            background: transparent;
+            color: var(--text-dark);
 
-          .linkedin-button:hover {
-            color: white;
-          }
-
-          .left-content {
-            .logo {
-              height: 46px;
-              margin-bottom: 6px;
-              padding-right: 0px;
+            &:hover {
+              color: #fff;
             }
+          }
+
+          .logo {
+            height: 46px;
+            margin-bottom: 6px;
+            padding-right: 0;
           }
         }
       }
+
       .profile {
         margin: 48px 32px;
 
-        & p {
+        p {
           text-align: center;
         }
 
-        p.slogan {
+        .slogan {
           margin-top: 32px;
         }
 
-        & img {
-          height: 250px;
+        img {
           width: 250px;
+          height: 250px;
           margin-top: 60px;
         }
       }
-    }    
+    }
   }
 }
