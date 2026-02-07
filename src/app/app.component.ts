@@ -27,7 +27,7 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'cv';
@@ -53,12 +53,12 @@ export class AppComponent implements OnInit {
     window.open(url, '_blank'); 
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.updateScreenSize();
-    }
+  @HostListener('window:resize')
+onResize() {
+  if (isPlatformBrowser(this.platformId)) {
+    this.updateScreenSize();
   }
+}
 
   private updateScreenSize() {
     this.isMobile = window.innerWidth < 960;
