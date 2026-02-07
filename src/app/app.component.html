@@ -1,42 +1,46 @@
 <div class="content">
   <mat-toolbar>
     <mat-toolbar-row>
-
       <div class="left-content">
-        <img class="logo" src="https://i.imgur.com/lDxAfVB.png" alt="Gian logo">
+        <img
+          class="logo"
+          src="https://i.imgur.com/lDxAfVB.png"
+          alt="Gian logo"
+        />
         <span class="name">Gian</span>
       </div>
 
       <div class="right-content">
+        <div class="desktop-buttons">
+          <a
+            mat-button
+            class="git-button"
+            href="https://github.com/gerufireblade"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open GitHub profile in a new tab"
+          >
+            GitHub
+          </a>
 
-          <div class="desktop-buttons">
-            <a
-  mat-button
-  class="git-button"
-  href="https://github.com/gerufireblade"
-  target="_blank"
-  rel="noopener noreferrer">
-  GitHub
-</a>
-
-<a
-  mat-stroked-button
-  class="linkedin-button"
-  href="https://www.linkedin.com/in/gianestevez/"
-  target="_blank"
-  rel="noopener noreferrer">
-  LinkedIn
-</a>
-          </div>
-
+          <a
+            mat-stroked-button
+            class="linkedin-button"
+            href="https://www.linkedin.com/in/gianestevez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open LinkedIn profile in a new tab"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
-
     </mat-toolbar-row>
   </mat-toolbar>
 
   <section class="profile">
     <p class="main-color-text main-text">
-      Frontend, Backend, Eu & Database Developer
+      Frontend, Backend & Database Developer
     </p>
 
     <p class="slogan">
@@ -46,7 +50,22 @@
     <img
       class="profile-photo"
       src="https://i.imgur.com/WXtlQK1.jpg"
-      alt="Profile photo">
+      alt="Profile photo of Gian"
+    />
+  </section>
+
+    <section class="carousel basic">
+      <div class="group">
+    <div class="card">A</div>
+    <div class="card">B</div>
+    <div class="card">C</div>
+  </div>
+  <!-- Add `aria-hidden` to hide the duplicated cards from screen readers. -->
+  <div aria-hidden="true" class="group">
+    <div class="card">A</div>
+    <div class="card">B</div>
+    <div class="card">C</div>
+  </div>
   </section>
 </div>
 
