@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;700&display=swap');
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 /* Estilos globales */
 html, body { 
   height: 100%; 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * { 
   margin: 0; 
-  font-family: 'Lato', sans-serif !important; 
+  font-family: 'Cabin', sans-serif !important; 
 }
 
 .material-icons{

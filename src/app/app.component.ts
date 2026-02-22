@@ -1,5 +1,7 @@
 import {
-  Component
+  Component,
+  ElementRef,
+  ViewChild
 } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
@@ -23,6 +25,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild('carousel', { static: false }) carousel?: ElementRef;
+
+  scrollToCarousel() {
+    this.carousel?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 
   openGithub() {
     window.open('https://github.com/gerufireblade', '_blank');

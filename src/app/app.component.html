@@ -1,71 +1,63 @@
 <div class="content">
-  <mat-toolbar>
-    <mat-toolbar-row>
-      <div class="left-content">
-        <img
-          class="logo"
-          src="https://i.imgur.com/lDxAfVB.png"
-          alt="Gian logo"
-        />
-        <span class="name">Gian</span>
-      </div>
+  <section class="summary">
+    <div class="left-content">
+      <p class="main-color-text main-text">
+        Hi! I'm Gian.
+      </p>
 
-      <div class="right-content">
-        <div class="desktop-buttons">
-          <a
-            mat-button
-            class="git-button"
-            href="https://github.com/gerufireblade"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab"
-          >
-            GitHub
-          </a>
+      <p class="slogan">
+        Building smooth, fast, and seamless digital experiences.
+      </p>
 
-          <a
-            mat-stroked-button
-            class="linkedin-button"
-            href="https://www.linkedin.com/in/gianestevez/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open LinkedIn profile in a new tab"
-          >
-            LinkedIn
-          </a>
-        </div>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
+      <button (click)="scrollToCarousel()">
+  Find out more
+</button>
+    </div>
 
-  <section class="profile">
-    <p class="main-color-text main-text">
-      Frontend, Backend & Database Developer
-    </p>
-
-    <p class="slogan">
-      Building smooth, fast, and seamless digital experiences.
-    </p>
-
-    <img
-      class="profile-photo"
-      src="https://i.imgur.com/WXtlQK1.jpg"
-      alt="Profile photo of Gian"
-    />
+    <div class="right-content">
+      <img
+        class="profile-photo"
+        src="https://i.imgur.com/q8Sa3nI.jpg"
+        alt="Profile photo of Gian"
+      />
+    </div>
   </section>
 
-    <section class="carousel basic">
-      <div class="group">
-    <div class="card">A</div>
-    <div class="card">B</div>
-    <div class="card">C</div>
-  </div>
-  <!-- Add `aria-hidden` to hide the duplicated cards from screen readers. -->
-  <div aria-hidden="true" class="group">
-    <div class="card">A</div>
-    <div class="card">B</div>
-    <div class="card">C</div>
-  </div>
+  <section #carousel class="carousel">
+    <div class="group">
+      <div class="card">Angular</div>
+      <div class="card">Springboot</div>
+      <div class="card">Oracle</div>
+      <div class="card">MySQL</div>
+      <div class="card">Ionic</div>
+    </div>
+
+    <!-- Add `aria-hidden` to hide the duplicated cards from screen readers. -->
+    <div aria-hidden="true" class="group">
+      <div class="card">Angular</div>
+      <div class="card">Springboot</div>
+      <div class="card">Oracle</div>
+      <div class="card">MySQL</div>
+      <div class="card">Ionic</div>
+    </div>
+  </section>
+
+  <section class="description">
+    <div class="text-wrapper">
+      <p>Hola, Soy Gianfranco. Un gusto conocerte!</p>
+      <p>
+        Durante los últimos 4 años he trabajado creando y mejorando productos digitales para la comunidad universitaria.
+        He participado en el desarrollo de aplicaciones móviles y plataformas web que facilitan procesos académicos y administrativos.
+        Disfruto convertir ideas en soluciones claras, funcionales y centradas en las personas.
+        Soy curioso, detallista y siempre estoy buscando nuevas formas de mejorar lo que construyo.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="main-card">
+      <p>a</p>
+    </div>
   </section>
 </div>
 

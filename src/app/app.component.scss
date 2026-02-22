@@ -41,72 +41,74 @@ $animation-speed: 40s;
 // ==============================
 
 :host .content {
-  // ---------- Toolbar ----------
-
-  mat-toolbar {
-    display: flex;
-    justify-content: center;
-    padding: 64px 0;
-    background: #fff;
-    transition: all 0.3s ease-in-out;
-
-    mat-toolbar-row {
+  // ---------- Header ----------
+  background-color: black;
+  .header {
+    mat-toolbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 0 160px;
+      justify-content: center;
+      padding: 64px 0;
+      background: #fff;
+      transition: all 0.3s ease-in-out;
 
-      .left-content {
+      mat-toolbar-row {
         display: flex;
         align-items: center;
-      }
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 160px;
 
-      .logo {
-        height: 56px;
-        margin-bottom: 8px;
-        padding-right: 4px;
-      }
-
-      .name {
-        padding-left: 8px;
-        font-weight: 900;
-        color: var(--text-dark);
-      }
-
-      mat-icon {
-        color: var(--text-dark);
-      }
-
-      .desktop-buttons {
-        display: flex;
-        gap: 24px;
-      }
-
-      // ---------- Git button ----------
-
-      .git-button {
-        font-size: 16px;
-        background: transparent;
-        color: var(--text-dark);
-
-        &:hover {
-          background: transparent;
-          color: var(--primary);
+        .left-content {
+          display: flex;
+          align-items: center;
         }
-      }
 
-      // ---------- LinkedIn button ----------
+        .logo {
+          height: 56px;
+          margin-bottom: 8px;
+          padding-right: 4px;
+        }
 
-      .linkedin-button {
-        font-size: 16px;
-        background: transparent;
-        border: 2px solid var(--primary);
-        color: var(--primary);
+        .name {
+          padding-left: 8px;
+          font-weight: 900;
+          color: var(--text-dark);
+        }
 
-        &:hover {
-          background: var(--primary);
-          color: #fff;
+        mat-icon {
+          color: var(--text-dark);
+        }
+
+        .desktop-buttons {
+          display: flex;
+          gap: 24px;
+        }
+
+        // ---------- Git button ----------
+
+        .git-button {
+          font-size: 16px;
+          background: transparent;
+          color: var(--text-dark);
+
+          &:hover {
+            background: transparent;
+            color: var(--primary);
+          }
+        }
+
+        // ---------- LinkedIn button ----------
+
+        .linkedin-button {
+          font-size: 16px;
+          background: transparent;
+          border: 2px solid var(--primary);
+          color: var(--primary);
+
+          &:hover {
+            background: var(--primary);
+            color: #fff;
+          }
         }
       }
     }
@@ -114,22 +116,30 @@ $animation-speed: 40s;
 
   // ---------- Profile ----------
 
-  .profile {
+ .summary {
+  display: flex;
+  height: 100svh;
+
+  .left-content {
+    width: 50%;
+    height: 100%;
+    background-color: #111111;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 48px 0;
+    padding: 3rem;
+    box-sizing: border-box;
 
     .main-text {
       font-size: 36px;
       font-weight: 600;
+      color: white;
     }
 
     .slogan {
       margin-top: 24px;
       font-size: 20px;
-      color: var(--text-muted);
+      color: white;
     }
 
     img {
@@ -139,65 +149,114 @@ $animation-speed: 40s;
       border-radius: 50%;
       object-fit: cover;
     }
+
+    button { 
+      margin-top: 18px;
+      width: 150px;
+      height: 40px;
+      border-radius: 25px;
+      background: white;
+      border-color: transparent;
+    }
   }
+
+  .right-content {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
 
   // ---------- Slider ----------
 
   .carousel {
-    margin: 0 auto;
-    padding: 20px 0;
-    max-width: 700px;
+    padding: 14rem 0;
     overflow: hidden;
     display: flex;
+    background-color: black;
 
     > * {
       flex: 0 0 100%;
     }
 
-     .group {
+    .group {
       display: flex;
       gap: 20px;
       /* Add padding to the right to create a gap between the last and first card. */
       padding-right: 20px;
       will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
       animation: scrolling 10s linear infinite;
+
+      .card {
+        width: 100%;
+        color: white;
+        border-radius: 24px;
+        box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
+        padding: 20px;
+        font-size: xx-large;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+
+        &:nth-child(1) {
+          background: #7958ff;
+        }
+      
+        &:nth-child(2) {
+          background: #5d34f2;
+        }
+      
+        &:nth-child(3) {
+          background: #4300da;
+        }
+      
+        &:nth-child(4) {
+          background: #7d60c0;
+        }
+      
+        &:nth-child(5) {
+          background: #9386af;
+        }
+      }
     }
 
      @keyframes scrolling {
-    0% {
-      transform: translateX(0);
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 
-   &:hover .group {
+    &:hover .group {
       animation-play-state: paused;
     }
   }
 
-  .card {
-    width: 100%;
-    color: white;
-    border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
-    padding: 20px;
-    font-size: xx-large;
-    justify-content: center;
+  .description {
+    height: 600px;
+    background-color: #111111;
     align-items: center;
-    min-height: 200px;
-
-    &:nth-child(1) {
-      background: #7958ff;
-    }
-
-    &:nth-child(2) {
-      background: #5d34f2;
-    }
-
-    &:nth-child(3) {
-      background: #4300da;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .text-wrapper {
+      max-width: 900px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-size: 24px;
+      color: white;
+      & p:first-of-type {
+        margin-bottom: 14px;
+      }
     }
   }
 }
